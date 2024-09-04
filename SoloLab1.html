@@ -1,86 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>John's Trinkets & Doodads</title>
-    <base href="https://www.johnstrinkets.com">
-    <link rel="stylesheet" type="text/css" href="">
-    <meta charset="UTF-8">
-
-    <meta name="application-name" content="John's Doodads & Trinkets">
-    <meta name="author" content="John Nguyen">
-    <meta name="description" content="Solo Lab 1: Store home page">
-    <meta name="keywords" content="John, Trinket, Doodad, Home, HTML, Store, e-commerce">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-
-    <meta http-equiv="default-style" content="">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
-    <link rel="icon" type="image/x-icon" href="https://e7.pngegg.com/pngimages/806/928/png-clipart-baked-beans-common-bean-food-pork-and-beans-red-beans-baking-recipe.png">
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        header {text-align: center}
-        footer {text-align: center}
-        [class*="col-"] {
-            float: left;
-            padding: 15px;
-            border: 5px solid black;
-            font-family: "Lucida Sans",sans-serif;
-        }
-        .col-1 {width: 8.33%;}
-        .col-2 {width: 16.66%;}
-        .col-3 {width: 25%; background-color: #8da4c9;}
-        .col-4 {width: 33.33%;}
-        .col-5 {width: 41.66%;}
-        .col-6 {width: 50%;}
-        .col-7 {width: 58.33%;}
-        .col-8 {width: 66.66%;}
-        .col-9 {width: 75%;}
-        .col-10 {width: 83.33%;}
-        .col-11 {width: 91.66%;}
-        .col-12 {width: 100%; background-color: #6d8dc2}
-    </style>
-</head>
-
-<body>
-<header class="col-12">
-    <img align="left" src="https://atlas-content-cdn.pixelsquid.com/stock-images/roasted-coffee-bean-z0nDwn8-600.jpg" alt="" width="100" height="100">
-    <h1 align="right">John's Trinkets & Doodads</h1>
-</header>
-
-<nav class="col-3">
-    <ul>
-        <li><a href="https://www.johnstrinkets.com">Home</a></li>
-        <li><a href="https://www.johnstrinkets.com./about_us">About us</a></li>
-        <li><a href="https://www.johnstrinkets.com/shopping_cart">Shopping Cart</a></li>
-        <li><a href="https://www.johnstrinkets.com/products">Products</a></li>
-        <li><a href="https://www.johnstrinkets.com/login">Login</a></li>
-        <li><a href="https://www.johnstrinkets.com/contact_us">Contact us</a></li>
-    </ul>
-</nav>
-
-<section class="col-6">
-    <h1>Products</h1>
-    <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_rhagbODTXHz3gks4UhWYuPErkMQUwrG9uA&s" alt="" width="100" height="100"></span>
-    <span><img src="https://i5.peapod.com/c/Y8/Y8SAV.png" alt="" width="100" height="100"></span>
-    <span><img src=https://images.heb.com/is/image/HEBGrocery/000129199-1 alt="" width="100" height="100"></span>
-    <article> This sections is to be made </article>
-
-</section>
-
-<aside class="col-3">
-    <p>This spot is reserved for ads</p>
-</aside>
-
-<footer class="col-12">
-    <a href="https://www.johnstrinkets.com./terms_of_use">Terms of Use</a>
-    <a href="https://www.johnstrinkets.com/cookie_and_privacy_policy">Cookie & Privacy Policy</a>
-    <a href="https://www.johnstrinkets.com/copyright">Copyright</a>
-</footer>
-
-</body>
-
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>John's Trinkets & Doodads</title>
+        <base href="https://www.johnstrinkets.com">
+        <meta charset="UTF-8">
+        <meta name="application-name" content="John's Doodads & Trinkets">
+        <meta name="author" content="John Nguyen">
+        <meta name="description" content="Solo Lab 1: Store home page">
+        <meta name="keywords" content="John, Trinket, Doodad, Home, HTML, Store, e-commerce">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta http-equiv="default-style" content="">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link rel="icon" type="image/x-icon" href="https://e7.pngegg.com/pngimages/806/928/png-clipart-baked-beans-common-bean-food-pork-and-beans-red-beans-baking-recipe.png">
+    </head>
+    <body>
+        <header class="col-12">
+            <img src="https://atlas-content-cdn.pixelsquid.com/stock-images/roasted-coffee-bean-z0nDwn8-600.jpg" alt="" width="100" height="100">
+            <h1 id="title">John's Trinkets & Doodads</h1>
+        </header>
+        <nav class="col-3">
+            <ul>
+                <li><a href="https://www.johnstrinkets.com">Home</a></li>
+                <li><a href="https://www.johnstrinkets.com./about_us">About us</a></li>
+                <li><a href="https://www.johnstrinkets.com/shopping_cart">Shopping Cart</a></li>
+                <li><a href="https://www.johnstrinkets.com/products">Products</a></li>
+                <li><a href="https://www.johnstrinkets.com/login">Login</a></li>
+                <li><a href="https://www.johnstrinkets.com/contact_us">Contact us</a></li>
+            </ul>
+        </nav>
+        <section class="col-6">
+            <h1>Products</h1>
+            <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_rhagbODTXHz3gks4UhWYuPErkMQUwrG9uA&s" alt="" width="100" height="100"></span>
+            <span><img src="https://i5.peapod.com/c/Y8/Y8SAV.png" alt="" width="100" height="100"></span>
+            <span><img src=https://images.heb.com/is/image/HEBGrocery/000129199-1 alt="" width="100" height="100"></span>
+        </section>
+        <aside class="col-3">
+            <p>This spot is reserved for ads</p>
+        </aside>
+        <footer class="col-12">
+            <a href="https://www.johnstrinkets.com./terms_of_use">Terms of Use</a>
+            <a href="https://www.johnstrinkets.com/cookie_and_privacy_policy">Cookie & Privacy Policy</a>
+            <a href="https://www.johnstrinkets.com/copyright">Copyright</a>
+        </footer>
+    </body>
 </html>
