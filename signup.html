@@ -68,7 +68,8 @@
             <div class="col-sm-10 p-2">
               <input maxlength="40" class="form-control" id="confirmPassword" placeholder="Confirm password" onfocusout="validateInput(this)" data-ng-model="confirmPassword" required>
             </div>
-            <p><input type="submit" id="submit" value="Sign Up"></p>
+            <p><input type="button" id="submit" value="Sign Up" onclick="JsonConvert()"></p>
+            <p id="JsonString"></p>
           </div>
         </form>
       </div>
@@ -158,6 +159,29 @@
             break;
         }
         return true;  // If all checks pass for the specific field
+      }
+    </script>
+
+    <script>
+      function JsonConvert() {
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+
+        // Create a JSON object
+        const formData = {
+          "username": username,
+          "email": email,
+          "password": password,
+          "confirmPassword": confirmPassword
+        };
+
+        // Convert the JSON object to a string
+        const jsonString = JSON.stringify(formData, null, 4); // Pretty print with indentation
+
+        // Update the content of the element with id "JsonString"
+        document.getElementById("JsonString").textContent = jsonString;
       }
     </script>
   </div>
