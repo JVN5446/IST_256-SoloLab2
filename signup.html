@@ -107,8 +107,8 @@
 
     <script>
       function validateInput(element) {
-        const id = element.id;  // Get the id of the element
-        const value = element.value;  // Get the value of the element
+        const id = element.id;
+        const value = element.value;
 
         switch (id) {
           case "username":
@@ -123,7 +123,7 @@
             break;
 
           case "email":
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  // Email pattern
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(value)) {
               alert("Invalid email format.");
               element.style.color="#FF0000"
@@ -135,7 +135,7 @@
             break;
 
           case "password":
-            const passwordRegex = /^(?=.*[A-Z])(?=.*\d).+$/;  // Password must contain at least one uppercase letter and one number
+            const passwordRegex = /^(?=.*[A-Z])(?=.*\d).+$/;
             if (!passwordRegex.test(value)) {
               alert("Password must contain at least one capital letter and one number.");
               element.style.color="#FF0000"
@@ -147,7 +147,7 @@
             break;
 
           case "confirmPassword":
-            const passwordValue = document.getElementById("password").value;  // Get the password value
+            const passwordValue = document.getElementById("password").value;
             if (value !== passwordValue) {
               alert("Passwords do not match.");
               element.style.color="#FF0000"
@@ -158,7 +158,7 @@
             }
             break;
         }
-        return true;  // If all checks pass for the specific field
+        return true;
       }
     </script>
 
@@ -169,7 +169,6 @@
         const password = document.getElementById("password").value;
         const confirmPassword = document.getElementById("confirmPassword").value;
 
-        // Create a JSON object
         const formData = {
           "username": username,
           "email": email,
@@ -177,10 +176,8 @@
           "confirmPassword": confirmPassword
         };
 
-        // Convert the JSON object to a string
-        const jsonString = JSON.stringify(formData, null, 4); // Pretty print with indentation
+        const jsonString = JSON.stringify(formData, null, 4);
 
-        // Update the content of the element with id "JsonString"
         document.getElementById("JsonString").textContent = jsonString;
       }
     </script>
