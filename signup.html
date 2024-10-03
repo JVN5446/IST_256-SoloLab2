@@ -54,19 +54,19 @@
           <div class="form-group">
             <label for="username" class="col-xs-2 control-label">Username: </label>
             <div class="col-sm-10 p-2">
-              <input maxlength="40" class="form-control" id="username" placeholder="Enter username" data-ng-model="username" required>
+              <input maxlength="40" class="form-control" id="username" placeholder="Enter username" onfocusout="validateInput(this)" data-ng-model="username" required>
             </div>
             <label for="email" class="col-xs-2 control-label">Email: </label>
             <div class="col-sm-10 p-2">
-              <input maxlength="50" class="form-control" id="email" placeholder="Enter email" data-ng-model="email" required>
+              <input maxlength="50" class="form-control" id="email" placeholder="Enter email" onfocusout="validateInput(this)" data-ng-model="email" required>
             </div>
             <label for="password" class="col-xs-2 control-label">Password: </label>
             <div class="col-sm-10 p-2">
-              <input maxlength="40" class="form-control" id="password" placeholder="Enter password" data-ng-model="password" required>
+              <input maxlength="40" class="form-control" id="password" placeholder="Enter password" onfocusout="validateInput(this)" data-ng-model="password" required>
             </div>
             <label for="confirmPassword" class="col-xs-2 control-label">Confirm Password: </label>
             <div class="col-sm-10 p-2">
-              <input maxlength="40" class="form-control" id="confirmPassword" placeholder="Confirm password" data-ng-model="confirmPassword" required>
+              <input maxlength="40" class="form-control" id="confirmPassword" placeholder="Confirm password" onfocusout="validateInput(this)" data-ng-model="confirmPassword" required>
             </div>
             <p><input type="submit" id="submit" value="Sign Up"></p>
           </div>
@@ -102,6 +102,63 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
             integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
             crossorigin="anonymous">
+    </script>
+
+    <script>
+      function validateInput(element) {
+        const id = element.id;  // Get the id of the element
+        const value = element.value;  // Get the value of the element
+
+        switch (id) {
+          case "username":
+            if (value === "") {
+              alert("Username is required.");
+              element.style.color="#FF0000"
+              return false;
+            }
+            else {
+              element.style.color="#000000"
+            }
+            break;
+
+          case "email":
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  // Email pattern
+            if (!emailRegex.test(value)) {
+              alert("Invalid email format.");
+              element.style.color="#FF0000"
+              return false;
+            }
+            else {
+              element.style.color="#000000"
+            }
+            break;
+
+          case "password":
+            const passwordRegex = /^(?=.*[A-Z])(?=.*\d).+$/;  // Password must contain at least one uppercase letter and one number
+            if (!passwordRegex.test(value)) {
+              alert("Password must contain at least one capital letter and one number.");
+              element.style.color="#FF0000"
+              return false;
+            }
+            else {
+              element.style.color="#000000"
+            }
+            break;
+
+          case "confirmPassword":
+            const passwordValue = document.getElementById("password").value;  // Get the password value
+            if (value !== passwordValue) {
+              alert("Passwords do not match.");
+              element.style.color="#FF0000"
+              return false;
+            }
+            else {
+              element.style.color="#000000"
+            }
+            break;
+        }
+        return true;  // If all checks pass for the specific field
+      }
     </script>
   </div>
   </body>
