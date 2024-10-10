@@ -81,6 +81,7 @@
         </div>
         <div class="col-12">
           <button class="btn btn-primary" type="submit">Sign Up!</button>
+          <span id="json"></span>
         </div>
       </form>
     </div>
@@ -126,9 +127,11 @@
       // Loop over them and prevent submission
       Array.from(forms).forEach(form => {
         form.addEventListener('submit', event => {
+          const userName = form.querySelector('#userName');
           const email = form.querySelector('#email');
           const password = form.querySelector('#password');
           const confirmPassword = form.querySelector('#confirmPassword');
+          const jsonOutput = document.querySelector('#json');
           let isValid = true;
 
           // Email validation: Check if email contains '@' and '.'
@@ -150,6 +153,20 @@
           if (!form.checkValidity() || !isValid) {
             event.preventDefault();
             event.stopPropagation();
+          } else {
+            // Prevent actual form submission
+            event.preventDefault();
+
+            // Create the JSON string
+            const userData = {
+              username: userName.value,
+              email: email.value,
+              password: password.value,
+              confirmPassword: confirmPassword.value
+            };
+
+            // Display the JSON in the span
+            jsonOutput.textContent = JSON.stringify(userData, null, 2);
           }
 
           form.classList.add('was-validated');
